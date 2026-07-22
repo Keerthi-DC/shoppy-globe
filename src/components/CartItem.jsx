@@ -31,9 +31,9 @@ export default function CartItem({ item }) {
       <img src={product.thumbnail} alt={product.title} className="cart-item-image" />
       <div className="cart-item-details">
         <h4 className="cart-item-title">{product.title}</h4>
-        <p className="cart-item-price">Price: ${product.price}</p>
+        <p className="cart-item-price">Price: ₹{product.price}</p>
         <p className="cart-item-quantity">Quantity: {quantity}</p>
-        <p className="cart-item-subtotal">Subtotal: ${product.price * quantity}</p>
+        <p className="cart-item-subtotal">Subtotal: ₹{product.price * quantity}</p>
         <div className="quantity-controls">
           <button onClick={handleDecrement} disabled={quantity <= 1}>-</button>
           <span>{quantity}</span>

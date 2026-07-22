@@ -25,6 +25,7 @@ export default function Cart() {
 
   const handleEmptyCart = () => {
     dispatch(clearCart());
+    alert('Cart emptied successfully!');
   };
 
   if (cartArray.length === 0) {
@@ -50,14 +51,14 @@ export default function Cart() {
       <div className="cart-summary">
         <div className="summary-details">
           <p>Items: {itemCount}</p>
-          <p>Subtotal: ${subtotal.toFixed(2)}</p>
+          <p>Subtotal: ₹{subtotal.toFixed(2)}</p>
           <p>Delivery: Free</p>
-          <p>Tax: $0.00</p>
+          <p>Tax: ₹0.00</p>
         </div>
           <div className="cart-actions">
             <h3>Grand Total: ${grandTotal.toFixed(2)}</h3>
             <button className="btn" onClick={handleCheckout} disabled={cartArray.length === 0}>Proceed to Checkout</button>
-            <button className="empty-btn" onClick={handleEmptyCart}>Empty Cart</button>
+            <button className="btn" onClick={handleEmptyCart}>Empty Cart</button>
           </div>
       </div>
     </div>
