@@ -4,6 +4,7 @@ import { useFetchProducts } from '../hooks/useFetchProducts';
 import { useSelector } from 'react-redux';
 import { selectSearchTerm } from '../store/searchSlice';
 import ProductItem from './ProductItem';
+import './ProductList.css';
 import Loader from './Loader';
 
 export default function ProductList() {
