@@ -45,6 +45,15 @@
   outline: none;
   border-color: #4f46e5; /* indigo focus */
 }
+.error {
+  border-color: #ef4444 !important; /* red */
+}
+
+.error-message {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: 4px;
+}
 
 .checkout-summary {
   flex: 1 1 250px;
