@@ -56,7 +56,7 @@ export default function Cart() {
           <p>Tax: ₹0.00</p>
         </div>
           <div className="cart-actions">
-            <h3>Grand Total: ${grandTotal.toFixed(2)}</h3>
+            <h3>Grand Total: ₹{grandTotal.toFixed(2)}</h3>
             <button className="btn" onClick={handleCheckout} disabled={cartArray.length === 0}>Proceed to Checkout</button>
             <button className="btn" onClick={handleEmptyCart}>Empty Cart</button>
           </div>

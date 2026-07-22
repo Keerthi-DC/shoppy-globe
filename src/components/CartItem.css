@@ -12,8 +12,8 @@
 }
 
 .cart-item-image {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   border-radius: 6px;
 }
@@ -45,26 +45,31 @@
 }
 
 .quantity-controls button {
-  background: var(--primary);
+  background: #7C3AED; /* Purple */
   color: #fff;
   border: none;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  border-radius: 9999px; /* pill */
   cursor: pointer;
   transition: background 0.2s;
 }
 
 .quantity-controls button:hover {
-  background: #4338ca;
+  background: #6D28D9; /* darker purple */
 }
 
 .remove-button {
-  background: var(--accent);
+  background: #EF4444; /* Red */
+  color: #fff;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  cursor: pointer;
   margin-left: auto;
 }
 
 .remove-button:hover {
-  background: #c81e48;
+  background: #dc2626;
 }
 
 @media (max-width: 600px) {

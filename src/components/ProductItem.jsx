@@ -17,7 +17,7 @@ export default function ProductItem({ product }) {
     <div className="product-card">
       <img src={product.thumbnail} alt={product.title} className="product-image" />
       <h3 className="product-title">{product.title}</h3>
-      <p className="product-price">${product.price}</p>
+      <p className="product-price">₹{product.price}</p>
       <button className="btn" onClick={handleAdd}>Add to Cart</button>
     </div>
   );

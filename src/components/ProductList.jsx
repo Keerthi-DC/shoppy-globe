@@ -11,7 +11,9 @@ export default function ProductList() {
   const { products, loading, error } = useFetchProducts();
   const searchTerm = useSelector(selectSearchTerm).toLowerCase();
   const filtered = products.filter(p => p.title.toLowerCase().includes(searchTerm));
-
+  // Filter out non‑vegetarian items (e.g., chicken, beef, pork, fish, meat, shrimp, lamb, bacon, sausage)
+  const vegetarian = filtered.filter(p => !/(chicken|beef|pork|fish|meat|shrimp|lamb|bacon|sausage)/i.test(p.title));
+  
   if (loading) return <Loader />;
   if (error) return <p>Error loading products.</p>;
 
@@ -19,7 +21,7 @@ export default function ProductList() {
     <div className="product-list" style={{ padding: '2rem' }}>
       <h2>Product List</h2>
       <div className="product-grid">
-        {filtered.map(product => (
+        {vegetarian.map(product => (
           <ProductItem key={product.id} product={product} />
         ))}
       </div>
