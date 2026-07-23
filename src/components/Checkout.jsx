@@ -1,12 +1,13 @@
 // src/components/Checkout.jsx
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { selectCartItems } from '../store/cartSlice';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectCartItems, clearCart } from '../store/cartSlice';
 import { Link, useNavigate } from 'react-router-dom';
 import './Checkout.css';
 
 export default function Checkout() {
   const items = useSelector(selectCartItems);
+const dispatch = useDispatch();
   const cartArray = Object.values(items);
   const grandTotal = cartArray.reduce((sum, { product, quantity }) => sum + product.price * quantity, 0);
 
@@ -38,6 +39,7 @@ export default function Checkout() {
       return;
     }
     alert('Order placed successfully!');
+    dispatch(clearCart());
     navigate('/');
   };
 
