@@ -1,7 +1,7 @@
 /* src/components/Button.css */
 /* Common button styles */
 .btn {
-  background: #4f46e5; /* Indigo */
+  background: var(--color-primary); /* Primary */
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -15,7 +15,7 @@
 }
 
 .btn:hover {
-  background: #3730a3; /* darker */
+  background: var(--color-primary-dark); /* Hover */
   transform: translateY(-2px);
 }
 

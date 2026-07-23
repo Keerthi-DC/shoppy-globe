@@ -2,11 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
 :root {
-  --color-primary: #4169e1;
+  --color-primary: #4F46E5;
   /* royal blue */
-  --color-primary-dark: #3249b8;
+  --color-primary-dark: #4338CA;
   --color-bg: #f5f7fa;
   --color-surface: #ffffff;
+
   --color-text: #222222;
   --color-muted: #777777;
   --border-radius: 0.5rem;
