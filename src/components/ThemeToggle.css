@@ -1,0 +1,13 @@
+/* src/components/ThemeToggle.css */
+.theme-toggle {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #fff; /* matches header text */
+  padding: 0.2rem;
+  transition: transform 0.2s ease;
+}
+.theme-toggle:hover {
+  transform: scale(1.1);
+}

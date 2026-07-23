@@ -2,6 +2,7 @@
 import { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import Loader from './components/Loader';
 import { selectMode } from './store/themeSlice';
 
 // Lazy‑load route components
