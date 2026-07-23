@@ -1,5 +1,7 @@
 // src/components/Header.jsx
+import logo from '../assets/shoppyglobe_logo.png';
 import { Link, useNavigate } from 'react-router-dom';
+
 
 import { useDispatch, useSelector } from 'react-redux';
 import { setSearchTerm } from '../store/searchSlice';
@@ -21,7 +23,10 @@ export default function Header() {
     <header className="header">
       <nav className="nav">
 
-        <Link to="/" className="logo">ShoppyGlobe</Link>
+          <Link to="/" className="logo">
+            <img src={logo} alt="ShoppyGlobe logo" className="logo-img" />
+            ShoppyGlobe
+          </Link>
         <ul className="nav-links">
             <li><button className="btn nav-button" onClick={() => navigate('/')}>Home</button></li>
             <li><button className="btn nav-button" onClick={() => navigate('/cart')}>Cart ({totalQty})</button></li>
