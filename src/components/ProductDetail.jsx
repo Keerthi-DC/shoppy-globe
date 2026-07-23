@@ -19,7 +19,7 @@ export default function ProductDetail() {
   const displayProduct = product || fallbackProduct;
 
   const handleAddToCart = () => {
-    dispatch(addItem({ product }));
+    dispatch(addItem({ product: displayProduct }));
     toast.success('Added to cart');
   };
 
