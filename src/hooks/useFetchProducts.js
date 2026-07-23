@@ -12,7 +12,7 @@ export const useFetchProducts = () => {
 
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://dummyjson.com/products', {
+        const response = await axios.get('https://dummyjson.com/products?limit=200', {
           signal: controller.signal,
         });
         setProducts(response.data.products);
