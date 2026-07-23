@@ -31,7 +31,7 @@ export default function ProductDetail() {
     <div className="product-detail page" style={{ padding: '2rem' }}>
       <h2>{displayProduct.title}</h2>
       <div className="detail-grid">
-        <img src={displayProduct.thumbnail} alt={displayProduct.title} className="detail-image" />
+        <img src={displayProduct.thumbnail} alt={displayProduct.title} className="detail-image" loading="lazy" />
         <div className="detail-info">
           <p className="detail-description">{displayProduct.description}</p>
           <p className="detail-price">Price: ₹{displayProduct.price}</p>

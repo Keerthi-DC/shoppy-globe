@@ -18,7 +18,7 @@ export default function ProductItem({ product }) {
   return (
     <div className="product-card">
       <Link to={`/product/${product.id}`} className="product-title-link">
-        <img src={product.thumbnail} alt={product.title} className="product-image" />
+        <img src={product.thumbnail} alt={product.title} className="product-image" loading="lazy" />
         <h3 className="product-title">{product.title}</h3>
       </Link>
       <p className="product-price">₹{product.price}</p>

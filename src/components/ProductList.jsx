@@ -1,9 +1,10 @@
 // src/components/ProductList.jsx
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { useFetchProducts } from '../hooks/useFetchProducts';
 import { useSelector } from 'react-redux';
 import { selectSearchTerm } from '../store/searchSlice';
-import ProductItem from './ProductItem';
+const ProductItem = lazy(() => import('./ProductItem'));
+
 import './ProductList.css';
 import Loader from './Loader';
 import { featuredProducts } from '../data/featuredProducts';
@@ -24,11 +25,13 @@ export default function ProductList() {
   return (
     <div className="product-list" style={{ padding: '2rem' }}>
       <h2>Product List</h2>
-      <div className="product-grid">
-        {combined.map(product => (
-          <ProductItem key={product.id} product={product} />
-        ))}
-      </div>
+        <div className="product-grid">
+          <Suspense fallback={<Loader />}>
+            {combined.map(product => (
+              <ProductItem key={product.id} product={product} />
+            ))}
+          </Suspense>
+        </div>
     </div>
   );
 }

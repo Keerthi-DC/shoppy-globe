@@ -1,12 +1,12 @@
 // src/components/Cart.jsx
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectCartItems, clearCart } from '../store/cartSlice';
-import CartItem from './CartItem';
+const CartItem = lazy(() => import('./CartItem'));
 import { useNavigate, Link } from 'react-router-dom';
 import './Cart.css';
 import './Button.css';
-
+import Loader from './Loader';
 export default function Cart() {
   const items = useSelector(selectCartItems);
   const dispatch = useDispatch();
@@ -44,9 +44,11 @@ export default function Cart() {
     <div className="cart page" style={{ padding: '2rem' }}>
       <h2>Cart</h2>
       <div className="cart-items">
-        {cartArray.map(item => (
-          <CartItem key={item.product.id} item={item} />
-        ))}
+        <Suspense fallback={<div>Loading...</div>}>
+          {cartArray.map(item => (
+            <CartItem key={item.product.id} item={item} />
+          ))}
+        </Suspense>
       </div>
       <div className="cart-summary">
         <div className="summary-details">

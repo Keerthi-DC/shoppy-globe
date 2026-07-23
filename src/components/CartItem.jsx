@@ -28,7 +28,7 @@ export default function CartItem({ item }) {
 
   return (
     <div className="cart-item">
-      <img src={product.thumbnail} alt={product.title} className="cart-item-image" />
+      <img src={product.thumbnail} alt={product.title} className="cart-item-image" loading="lazy" />
       <div className="cart-item-details">
         <h4 className="cart-item-title">{product.title}</h4>
         <p className="cart-item-price">Price: ₹{product.price}</p>
