@@ -1,6 +1,7 @@
 // src/components/ProductDetail.jsx
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { featuredProducts } from '../data/featuredProducts';
 import { useDispatch } from 'react-redux';
 import { addItem } from '../store/cartSlice';
 import { toast } from 'react-toastify';
@@ -13,6 +14,10 @@ export default function ProductDetail() {
   const { product, loading, error } = useFetchProductDetail(id);
   const dispatch = useDispatch();
 
+  // Fallback for featured items that aren't in the API
+  const fallbackProduct = featuredProducts.find(p => p.id.toString() === id);
+  const displayProduct = product || fallbackProduct;
+
   const handleAddToCart = () => {
     dispatch(addItem({ product }));
     toast.success('Added to cart');
@@ -20,16 +25,16 @@ export default function ProductDetail() {
 
   if (loading) return <Loader />;
   if (error) return <p className="error">Error loading product.</p>;
-  if (!product) return <p>Product not found.</p>;
+  if (!displayProduct) return <p>Product not found.</p>;
 
   return (
     <div className="product-detail page" style={{ padding: '2rem' }}>
-      <h2>{product.title}</h2>
+      <h2>{displayProduct.title}</h2>
       <div className="detail-grid">
-        <img src={product.thumbnail} alt={product.title} className="detail-image" />
+        <img src={displayProduct.thumbnail} alt={displayProduct.title} className="detail-image" />
         <div className="detail-info">
-          <p className="detail-description">{product.description}</p>
-          <p className="detail-price">Price: ₹{product.price}</p>
+          <p className="detail-description">{displayProduct.description}</p>
+          <p className="detail-price">Price: ₹{displayProduct.price}</p>
           <button className="btn" onClick={handleAddToCart}>Add to Cart</button>
         </div>
       </div>

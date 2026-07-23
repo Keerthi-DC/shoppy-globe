@@ -20,7 +20,11 @@ export const useFetchProductDetail = (productId) => {
         );
         setProduct(response.data);
       } catch (err) {
-        if (!axios.isCancel(err)) {
+        // If the product is not found (404), treat it as a non‑fatal case and let the fallback product be used.
+        if (err.response && err.response.status === 404) {
+          // No product data, but not an error for the UI.
+          setError(null);
+        } else if (!axios.isCancel(err)) {
           setError(err);
         }
       } finally {
