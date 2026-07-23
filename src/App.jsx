@@ -1,7 +1,8 @@
 // src/App.jsx
 import { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Loader from './components/Loader';
+import { useSelector } from 'react-redux';
+import { selectMode } from './store/themeSlice';
 
 // Lazy‑load route components
 const Header = lazy(() => import('./components/Header'));
@@ -12,8 +13,9 @@ const CheckoutPage = lazy(() => import('./components/Checkout'));
 const NotFoundPage = lazy(() => import('./components/NotFound'));
 
 export default function App() {
+  const mode = useSelector(selectMode);
   return (
-    <>
+    <div className={mode === 'dark' ? 'dark' : ''}>
       {/* Header appears on every route */}
       <Suspense fallback={<Loader />}>
         <Header />
@@ -28,6 +30,6 @@ export default function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
-    </>
+    </div>
   );
 }
