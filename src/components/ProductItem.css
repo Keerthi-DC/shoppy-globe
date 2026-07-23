@@ -33,6 +33,11 @@
   color: var(--color-text);
 }
 
+.product-title-link {
+  text-decoration: none;
+  color: var(--color-text);
+}
+
 .product-price {
   font-weight: 600;
   color: var(--color-primary);
