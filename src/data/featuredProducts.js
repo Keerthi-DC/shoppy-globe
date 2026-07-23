@@ -6,7 +6,7 @@ export const featuredProducts = [
     id: -1,
     title: "Keeru's Brain",
     description: "An artistic rendering of Keeru's visionary mind, symbolizing limitless creativity and innovation.",
-    price:10000000000000000, // updated price
+    price: 10000000000000000, // updated price
     thumbnail: "/assets/keerus_brain.png",
     rating: 5,
   },
@@ -30,7 +30,7 @@ export const featuredProducts = [
     id: -4,
     title: "Project Score",
     description: "A perfect score reflecting the project's flawless execution, comprehensive features, and outstanding design.",
-    price: 100,
+    price: 250,
     thumbnail: "/assets/project_score.png",
     rating: 5,
   },
